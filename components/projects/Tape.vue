@@ -33,4 +33,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tape {
+
+  &__project {
+    padding: 25px 32px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__title {
+      margin-bottom: 25px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    &__text {
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    &__date {
+      font-size: 15px;
+      color: $grey;
+    }
+  }
+}
 </style>
