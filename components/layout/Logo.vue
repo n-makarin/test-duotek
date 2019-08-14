@@ -1,6 +1,11 @@
 <template>
   <div class="logo">
-    компания
+    <nuxt-link
+      class="logo__link"
+      to="/#"
+    >
+      компания
+    </nuxt-link>
   </div>
 </template>
 
@@ -17,5 +22,9 @@ export default {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
+
+  &__link {
+    color: black;
+  }
 }
 </style>
