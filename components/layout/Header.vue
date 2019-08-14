@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <Logo />
-    <Navigation />
+    <Navigation class="header__navigation" />
   </div>
 </template>
 
@@ -18,4 +18,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header {
+  display: flex;
+  align-items: center;
+  padding: 42px 0;
+
+  &__navigation {
+    margin-left: auto;
+  }
+}
 </style>
