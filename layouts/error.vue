@@ -29,6 +29,12 @@ export default {
   &__back {
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 50px;
+    color: black;
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 </style>
