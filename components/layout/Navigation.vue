@@ -24,10 +24,10 @@ export default {
   data: () => ({
     linkList: [
       { name: 'проекты', path: 'projects' },
-      { name: 'задачи', path: '#' },
-      { name: 'новости', path: '#' },
-      { name: 'вакансии', path: '#' },
-      { name: 'контакты', path: '#' }
+      { name: 'задачи', path: '/#' },
+      { name: 'новости', path: '/#' },
+      { name: 'вакансии', path: '/#' },
+      { name: 'контакты', path: '/#' }
     ]
   })
 }
