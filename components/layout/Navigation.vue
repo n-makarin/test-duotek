@@ -1,12 +1,19 @@
 <template>
-  <div class="navigation" />
+  <div class="navigation">
+    <ul>
+      <li v-for="(link, key) in linkList" :key="key">
+        {{ link }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 
 export default {
-  components: {
-  }
+  data: () => ({
+    linkList: ['проекты', 'задачи', 'новости', 'вакансии', 'контакты']
+  })
 }
 </script>
 
