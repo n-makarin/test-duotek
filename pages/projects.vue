@@ -2,15 +2,18 @@
   <div class="page page-projects">
     <h1>Лента проектов</h1>
     <tape :project-list="projectList" class="page-projects__tape" />
+    <pagination class="page-projects__pagination" />
   </div>
 </template>
 
 <script>
 import Tape from '@/components/projects/Tape'
+import Pagination from '@/components/Pagination'
 
 export default {
   components: {
-    Tape
+    Tape,
+    Pagination
   },
   data: () => ({
     // temporarly data
