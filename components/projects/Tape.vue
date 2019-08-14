@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getPath (key) {
-      return 'project/' + String(key + 1)
+      return 'projects/' + String(key + 1)
     }
   }
 }
@@ -49,9 +49,14 @@ export default {
       margin-bottom: 0;
     }
     &__title {
+      display: inline-block;
       margin-bottom: 25px;
       font-size: 25px;
       font-weight: bold;
+      color: black;
+      &:hover {
+        opacity: .7;
+      }
     }
     &__text {
       margin-bottom: 25px;
