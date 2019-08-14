@@ -1,7 +1,7 @@
 <template>
   <div class="page page-projects">
     <h1>Лента проектов</h1>
-    <tape :project-list="projectList" />
+    <tape :project-list="projectList" class="page-projects__tape" />
   </div>
 </template>
 
@@ -40,6 +40,9 @@ export default {
 .page-projects {
   h1 {
     margin: 40px 0;
+  }
+  &__tape {
+    margin-bottom: 78px;
   }
 }
 </style>
