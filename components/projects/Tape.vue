@@ -5,9 +5,9 @@
       :key="key"
       class="tape__project"
     >
-      <div class="tape__project__title">
+      <nuxt-link :to="getPath(key)" class="tape__project__title">
         {{ project.title }}
-      </div>
+      </nuxt-link>
       <div class="tape__project__text">
         {{ project.text }}
       </div>
@@ -26,6 +26,11 @@ export default {
     projectList: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    getPath (key) {
+      return 'project/' + String(key + 1)
     }
   }
 }
