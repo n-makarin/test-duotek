@@ -5,9 +5,14 @@
       :key="key"
       class="tape__project"
     >
-      <nuxt-link :to="getPath(key)" class="tape__project__title">
-        {{ project.title }}
-      </nuxt-link>
+      <div class="tape__project__title" @mousedown="setProjectId(project.id)">
+        <nuxt-link
+          :to="getPath(project.id)"
+          class="tape-project-title__internal"
+        >
+          {{ project.title }}
+        </nuxt-link>
+      </div>
       <div class="tape__project__text">
         {{ project.text }}
       </div>
@@ -29,8 +34,13 @@ export default {
     }
   },
   methods: {
-    getPath (key) {
-      return 'projects/' + String(key + 1)
+    getPath (id) {
+      return 'projects/' + id
+    },
+    setProjectId (id) {
+      debugger
+      this.$store.dispatch('project/resetId')
+      this.$store.dispatch('project/setId', id)
     }
   }
 }
@@ -51,12 +61,6 @@ export default {
     &__title {
       display: inline-block;
       margin-bottom: 25px;
-      font-size: 25px;
-      font-weight: bold;
-      color: black;
-      &:hover {
-        opacity: .7;
-      }
     }
     &__text {
       margin-bottom: 25px;
@@ -65,6 +69,18 @@ export default {
     &__date {
       font-size: 15px;
       color: $grey;
+    }
+  }
+  &-project {
+    &-title {
+      &__internal {
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+        &:hover {
+          opacity: .7;
+        }
+      }
     }
   }
 }
