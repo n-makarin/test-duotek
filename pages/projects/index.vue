@@ -3,7 +3,8 @@
     <h1>Лента проектов</h1>
     <tape :project-list="paginatedProjectList" class="page-projects__tape" />
     <pagination
-      v-model="selectedPage"
+      v-model="selectedPaginationPage"
+      :pages-amount="paginationPagesAmount"
       class="page-projects__pagination"
     />
   </div>
@@ -20,15 +21,20 @@ export default {
     Tape,
     Pagination
   },
+  data: () => ({
+    paginationItemsToShow: 4
+  }),
   computed: {
-    selectedPage () {
+    selectedPaginationPage () {
       return this.$store.getters['project/selectedPage']
+    },
+    paginationPagesAmount () {
+      return Math.ceil(this.projectList.length / this.paginationItemsToShow)
     },
     paginatedProjectList () {
       if (!this.projectList || this.projectList.length === 0) { return null }
-      const itemsToShow = 4
-      const start = this.selectedPage * itemsToShow
-      return this.projectList.slice(start, start + itemsToShow)
+      const start = this.selectedPaginationPage * this.paginationItemsToShow
+      return this.projectList.slice(start, start + this.paginationItemsToShow)
     }
   },
   asyncData () {
