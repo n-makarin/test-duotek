@@ -29,6 +29,9 @@ export default {
   components: {
     CommentList
   },
+  data: () => ({
+    isDataLoaded: false
+  }),
   computed: {
     projectId () {
       return this.$route.params.id
@@ -44,9 +47,6 @@ export default {
       ]
     }
   },
-  data: () => ({
-    isDataLoaded: false
-  }),
   async mounted () {
     await this.$store.dispatch('project/setData', this.projectId)
     await this.$store.dispatch('project/setCommentList', this.projectId)
