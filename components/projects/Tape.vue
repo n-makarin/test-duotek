@@ -5,7 +5,7 @@
       :key="key"
       class="tape__project"
     >
-      <div class="tape__project__title" @mousedown="setProjectData(project.id)">
+      <div class="tape__project__title">
         <nuxt-link
           :to="getPath(project.id)"
           class="tape-project-title__internal"
@@ -36,9 +36,6 @@ export default {
   methods: {
     getPath (id) {
       return 'projects/' + id
-    },
-    setProjectData (id) {
-      this.$store.dispatch('project/setData', id)
     }
   }
 }
