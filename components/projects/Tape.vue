@@ -38,7 +38,6 @@ export default {
       return 'projects/' + id
     },
     setProjectId (id) {
-      debugger
       this.$store.dispatch('project/resetId')
       this.$store.dispatch('project/setId', id)
     }
@@ -60,7 +59,7 @@ export default {
     }
     &__title {
       display: inline-block;
-      margin-bottom: 25px;
+        margin-bottom: 25px;
     }
     &__text {
       margin-bottom: 25px;
