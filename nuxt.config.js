@@ -44,6 +44,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     ['@nuxtjs/style-resources'],
+    'cookie-universal-nuxt'
   ],
   styleResources: {
     scss: [
