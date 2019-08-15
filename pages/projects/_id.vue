@@ -25,6 +25,7 @@ import { mapGetters } from 'vuex'
 import CommentList from '@/components/CommentList'
 
 export default {
+  scrollToTop: true,
   components: {
     CommentList
   },

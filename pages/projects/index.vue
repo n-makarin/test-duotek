@@ -12,6 +12,7 @@ import Tape from '@/components/projects/Tape'
 import Pagination from '@/components/Pagination'
 
 export default {
+  scrollToTop: true,
   components: {
     Tape,
     Pagination
