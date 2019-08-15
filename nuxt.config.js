@@ -29,7 +29,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vendor/vue-cookies.client.js',
   ],
   /*
   ** Nuxt.js dev-modules
