@@ -1,6 +1,6 @@
 <template>
   <div class="pagination">
-    <div class="pagination__row">
+    <div class="pagination__row pagination-row">
       <div
         v-for="(button, key) in rowButtons"
         :key="key"
@@ -54,4 +54,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pagination {
+  display: flex;
+  button {
+    padding: 12px 14px;
+    margin-right: 4px;
+    border: none;
+    background: $light-grey;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  &-row {
+    display: flex;
+    &__item {
+      &_selected {
+        button {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+  &__last-button {
+    margin-right: 0;
+  }
+}
 </style>
