@@ -11,7 +11,7 @@
       </div>
       <hr>
       <comment-list
-        :data="project.commentList"
+        :data="commentList"
       />
     </div>
     <div v-else>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import CommentList from '@/components/CommentList'
 
 export default {
@@ -31,12 +32,14 @@ export default {
     projectId () {
       return this.$route.params.id
     },
-    project () {
-      return this.$store.getters['project/data']
-    }
+    ...mapGetters({
+      project: 'project/data',
+      commentList: 'project/commentList'
+    })
   },
   mounted () {
     this.$store.dispatch('project/setData', this.projectId)
+    this.$store.dispatch('project/setCommentList', this.projectId)
   }
 }
 </script>
