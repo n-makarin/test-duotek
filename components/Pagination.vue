@@ -7,6 +7,12 @@
 <script>
 
 export default {
+  props: {
+    selectedPage: {
+      type: Number,
+      default: 0
+    }
+  }
 }
 
 </script>
