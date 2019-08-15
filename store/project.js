@@ -10,7 +10,8 @@ export const actions = {
     const endpoint = 'https://my-json-server.typicode.com/n-makarin/test-duotek/'
     const response = await this.$axios({
       method: 'get',
-      url: endpoint + url
+      url: endpoint + url,
+      data: payload
     })
     return response
   },
