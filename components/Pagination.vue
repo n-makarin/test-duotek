@@ -6,14 +6,20 @@
         :key="key"
         :class="getButtonClassList(key)"
       >
-        <button>{{ button }}</button>
+        <button @click="$emit('input', key)">
+          {{ button }}
+        </button>
       </div>
     </div>
     <div class="pagination__next-button">
-      <button>Следующая</button>
+      <button @click="$emit('input', getNextPageKey())">
+        Следующая
+      </button>
     </div>
     <div class="pagination__last-button">
-      <button>Последняя</button>
+      <button @click="$emit('input', pagesAmount - 1)">
+        Последняя
+      </button>
     </div>
   </div>
 </template>
@@ -47,6 +53,9 @@ export default {
       const mainClass = 'pagination-row__item'
       const selected = '_selected'
       return [ mainClass, { [mainClass + selected]: key === this.value } ]
+    },
+    getNextPageKey () {
+      return this.value + 1 < this.pagesAmount ? this.value + 1 : this.value
     }
   }
 }
