@@ -2,7 +2,8 @@ export const state = () => ({
   id: 0,
   data: {},
   projectList: [],
-  commentList: []
+  commentList: [],
+  selectedPage: 0
 })
 
 export const actions = {
@@ -37,6 +38,9 @@ export const actions = {
         if (!response) { return null }
         commit('SET_DATA', response.data)
       })
+  },
+  setSelectedPage ({ commit }, page) {
+    commit('SET_SELECTED_PAGE', page)
   }
 }
 
@@ -52,6 +56,9 @@ export const mutations = {
   },
   SET_COMMENT_LIST (state, data) {
     state.commentList = data
+  },
+  SET_SELECTED_PAGE (state, page) {
+    state.selectedPage = page
   }
 }
 
@@ -59,5 +66,6 @@ export const getters = {
   id: state => state.id,
   data: state => state.data,
   projectList: state => state.projectList,
-  commentList: state => state.commentList
+  commentList: state => state.commentList,
+  selectedPage: state => state.selectedPage
 }
