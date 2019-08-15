@@ -21,6 +21,9 @@
         </div>
       </div>
     </div>
+    <div class="comment-list__more-btn">
+      <button>Показать еще</button>
+    </div>
   </div>
 </template>
 
@@ -39,12 +42,44 @@ export default {
 
 <style lang="scss" scoped>
 .comment-list {
+  margin-bottom: 138px;
   h2 {
     margin-bottom: 20px;
     font-size: 20px;
   }
   &__item {
     margin-bottom: 10px;
+  }
+  &__more-btn {
+    margin-top: 35px;
+    text-align: center;
+    button {
+      display: inline-flex;
+      align-items: center;
+      padding: 13px 50px 12px 49px;
+      background: $light-grey;
+      border: none;
+      border-radius: 5px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background .3s;
+      &:hover {
+        background: $light-grey - 5;
+      }
+      &:hover:before {
+        transform: rotate(-30deg);
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 8px;
+        width: 12px;
+        height: 12px;
+        background-image: url(/icons/upload.svg);
+        transform: rotate(0deg);
+        transition: transform .3s;
+      }
+    }
   }
   &-item {
     display: flex;
