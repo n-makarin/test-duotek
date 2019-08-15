@@ -20,10 +20,14 @@ export default {
   asyncData () {
     const endpoint = 'https://my-json-server.typicode.com/n-makarin/test-duotek/'
     return axios.get(endpoint + 'projectList')
+      .catch((err) => {
+        console.error(err)
+      })
       .then((res) => {
         return { projectList: res.data }
       })
-  } }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
