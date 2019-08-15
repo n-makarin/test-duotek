@@ -23,4 +23,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.projects-id {
+
+  &__container {
+
+    &__text {
+      line-height: 22px;
+    }
+  }
+}
 </style>

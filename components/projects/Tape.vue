@@ -63,6 +63,7 @@ export default {
     &__text {
       margin-bottom: 25px;
       font-size: 15px;
+      line-height: 22px;
     }
     &__date {
       font-size: 15px;
