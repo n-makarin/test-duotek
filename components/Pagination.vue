@@ -6,18 +6,18 @@
         :key="key"
         :class="getButtonClassList(key)"
       >
-        <button @click="$emit('input', key)">
+        <button @click="rowButton(key)">
           {{ button }}
         </button>
       </div>
     </div>
     <div class="pagination__next-button">
-      <button @click="$emit('input', getNextPageKey())">
+      <button @click="next">
         Следующая
       </button>
     </div>
     <div class="pagination__last-button">
-      <button @click="$emit('input', pagesAmount - 1)">
+      <button @click="latest">
         Последняя
       </button>
     </div>
@@ -54,8 +54,20 @@ export default {
       const selected = '_selected'
       return [ mainClass, { [mainClass + selected]: key === this.value } ]
     },
-    getNextPageKey () {
-      return this.value + 1 < this.pagesAmount ? this.value + 1 : this.value
+    rowButton (key) {
+      if (this.value === key) { return null }
+      this.$emit('input', key)
+      window.scrollTo(0, 0)
+    },
+    next () {
+      if (this.value + 1 >= this.pagesAmount) { return null }
+      this.$emit('input', this.value + 1)
+      window.scrollTo(0, 0)
+    },
+    latest () {
+      if (this.value === this.pagesAmount - 1) { return null }
+      this.$emit('input', this.pagesAmount - 1)
+      window.scrollTo(0, 0)
     }
   }
 }
