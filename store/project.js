@@ -41,7 +41,6 @@ export const actions = {
   },
   setSelectedPage ({ commit }, page) {
     commit('SET_SELECTED_PAGE', Number(page))
-    // VueCookie.set('paginationSelectedPage', String(page))
   }
 }
 
@@ -68,12 +67,5 @@ export const getters = {
   data: state => state.data,
   projectList: state => state.projectList,
   commentList: state => state.commentList,
-  selectedPage (state) {
-    // const fromCookies = VueCookie.get('paginationSelectedPage')
-    // if (fromCookies) {
-    //   return Number(fromCookies)
-    // } else {
-    // }
-    return state.selectedPage
-  }
+  selectedPage: state => state.selectedPage
 }
