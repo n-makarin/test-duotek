@@ -1,17 +1,22 @@
 <template>
   <div class="page page-projects__id projects-id">
-    <div class="projects-id__main">
-      <h1 class="projects-id__main__title">
-        {{ project.title }}
-      </h1>
-      <div class="projects-id__main__text">
-        {{ project.text }}
+    <div v-if="project">
+      <div class="projects-id__main">
+        <h1 class="projects-id__main__title">
+          {{ project.title }}
+        </h1>
+        <div class="projects-id__main__text">
+          {{ project.text }}
+        </div>
       </div>
+      <hr>
+      <comment-list
+        :data="project.commentList"
+      />
     </div>
-    <hr>
-    <comment-list
-      :data="project.commentList"
-    />
+    <div v-else>
+      <h1>Project with id "{{ projectId }}" not found</h1>
+    </div>
   </div>
 </template>
 
@@ -23,9 +28,15 @@ export default {
     CommentList
   },
   computed: {
+    projectId () {
+      return this.$route.params.id
+    },
     project () {
       return this.$store.getters['project/data']
     }
+  },
+  mounted () {
+    this.$store.dispatch('project/setData', this.projectId)
   }
 }
 </script>
