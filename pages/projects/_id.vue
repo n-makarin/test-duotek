@@ -1,6 +1,13 @@
 <template>
   <div class="page page-projects__id">
-    {{ id }}
+    <div class="projects-id__container">
+      <h1 class="projects-id__container__title">
+        {{ project.title }}
+      </h1>
+      <div class="projects-id__container__text">
+        {{ project.text }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -8,8 +15,8 @@
 
 export default {
   computed: {
-    id () {
-      return this.$store.getters['project/id']
+    project () {
+      return this.$store.getters['project/data']
     }
   }
 }
