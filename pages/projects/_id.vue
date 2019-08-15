@@ -41,7 +41,7 @@ export default {
   }
   hr {
     height: 1px;
-    margin: 40px 0;
+    margin: 40px 0 30px 0;
     border: none;
     background-color: $light-grey;
   }
