@@ -43,9 +43,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-projects {
-  h1 {
-    margin: 40px 0;
-  }
   &__tape {
     margin-bottom: 78px;
   }
