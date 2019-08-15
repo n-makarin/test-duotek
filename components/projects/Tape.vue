@@ -17,14 +17,14 @@
         {{ project.text }}
       </div>
       <div class="tape__project__date">
-        {{ project.date.created }}
-        {{ project.date.edited }}
+        {{ getProjectDate(project.date.created, project.date.edited) }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 
 export default {
   props: {
@@ -36,6 +36,31 @@ export default {
   methods: {
     getPath (id) {
       return 'projects/' + id
+    },
+    /**
+     * Returns date of creating and editing in required format
+     * @param {Number|String} created Creation date timestamp
+     * @param {Number|String} edited Editing date timestamp
+     * @returns {String}
+     */
+    getProjectDate (created, edited) {
+      created = Number(created) * 1000
+      edited = Number(edited) * 1000
+      const at = 'в'
+      const space = ' '
+      const changed = 'изменена'
+      let editedResult = null
+      let result = null
+      const creationDate = moment(created).format('DD MM YYYY')
+      const creationTime = moment(created).format('hh:mm')
+      const createdResult = creationDate + space + at + space + creationTime
+      if (edited) {
+        const editingnDate = moment(edited).format('DD MM YYYY')
+        const editingnTime = moment(edited).format('hh:mm')
+        editedResult = ',' + space + changed + space + editingnDate + space + at + space + editingnTime
+      }
+      result = editedResult ? createdResult + editedResult : createdResult
+      return result
     }
   }
 }
