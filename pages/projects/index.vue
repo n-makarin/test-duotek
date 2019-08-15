@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Tape from '@/components/projects/Tape'
 import Pagination from '@/components/Pagination'
 
@@ -15,30 +16,13 @@ export default {
     Tape,
     Pagination
   },
-  data: () => ({
-    // temporarly data
-    projectList: [
-      {
-        id: 2123,
-        title: 'Помощник инженера ПТО',
-        text: 'Консультации для клиентов, относительно требований ПБ к их объекту. Ведение переговоров и встречи с клиентами. Полное обследования объектов на предмет... Отличное знание и понимание нормативной базы в области ПБ, умение ею пользоваться оперативно.',
-        date: {
-          created: 1529678640,
-          edited: 1529752200
-        }
-      },
-      {
-        id: 2143,
-        title: 'Инженер по тестированию / QA Engineer',
-        text: 'Консультации для клиентов, относительно требований ПБ к их объекту. Ведение переговоров и встречи с клиентами. Полное обследования объектов на предмет... Отличное знание и понимание нормативной базы в области ПБ, умение ею пользоваться оперативно.',
-        date: {
-          created: 1529678690,
-          edited: 1529752500
-        }
-      }
-    ]
-  })
-}
+  asyncData () {
+    const endpoint = 'https://my-json-server.typicode.com/n-makarin/test-duotek/'
+    return axios.get(endpoint + 'projectList')
+      .then((res) => {
+        return { projectList: res.data }
+      })
+  } }
 </script>
 
 <style lang="scss" scoped>
