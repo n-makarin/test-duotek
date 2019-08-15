@@ -25,8 +25,13 @@ export default {
     paginationItemsToShow: 4
   }),
   computed: {
-    selectedPaginationPage () {
-      return this.$store.getters['project/selectedPage']
+    selectedPaginationPage: {
+      get () {
+        return this.$store.getters['project/selectedPage']
+      },
+      set (newValue, oldValue) {
+        this.$store.dispatch('project/setSelectedPage', newValue)
+      }
     },
     paginationPagesAmount () {
       return Math.ceil(this.projectList.length / this.paginationItemsToShow)
