@@ -1,6 +1,6 @@
-export const state = {
+export const state = () => ({
   id: 0
-}
+})
 
 export const actions = {
   setId ({ commit }, id) {
