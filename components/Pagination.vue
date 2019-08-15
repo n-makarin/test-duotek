@@ -4,7 +4,7 @@
       <div
         v-for="(button, key) in rowButtons"
         :key="key"
-        class="pagination-row__item"
+        :class="getButtonClassList(key)"
       >
         <button>{{ button }}</button>
       </div>
@@ -22,7 +22,7 @@
 
 export default {
   props: {
-    selectedPage: {
+    value: {
       type: Number,
       default: 0
     },
@@ -40,6 +40,13 @@ export default {
         count++
       }
       return buttons
+    }
+  },
+  methods: {
+    getButtonClassList (key) {
+      const mainClass = 'pagination-row__item'
+      const selected = '_selected'
+      return [ mainClass, { [mainClass + selected]: key === this.value } ]
     }
   }
 }
