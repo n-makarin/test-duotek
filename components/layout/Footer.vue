@@ -72,14 +72,14 @@ export default {
     /* 1, 3 column */
     &__column:nth-child(1), &__column:nth-child(3) {
       .link:first-child {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         opacity: .7;
       }
     }
     /* 2, 4 column */
     &__column:nth-child(2), &__column:nth-child(4) {
       .link:first-child {
-        margin-top: 34px;
+        margin-top: 44px;
       }
     }
     &__link {
