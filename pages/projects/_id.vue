@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-projects__id projects-id">
+  <div :class="projectClassList">
     <div v-if="project">
       <div class="projects-id__main">
         <h1 class="projects-id__main__title">
@@ -36,18 +36,33 @@ export default {
     ...mapGetters({
       project: 'project/data',
       commentList: 'project/commentList'
-    })
+    }),
+    projectClassList () {
+      return [
+        'page page-projects__id projects-id',
+        { 'projects-id_loading': !this.isDataLoaded }
+      ]
+    }
   },
-  mounted () {
-    this.$store.dispatch('project/setData', this.projectId)
-    this.$store.dispatch('project/setCommentList', this.projectId)
+  data: () => ({
+    isDataLoaded: false
+  }),
+  async mounted () {
+    await this.$store.dispatch('project/setData', this.projectId)
+    await this.$store.dispatch('project/setCommentList', this.projectId)
+    this.isDataLoaded = true
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .projects-id {
+  opacity: 1;
+  transition: opacity .3s;
 
+  &_loading {
+    opacity: 0;
+  }
   &__main {
 
     &__text {
