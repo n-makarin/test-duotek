@@ -52,6 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .page-projects {
+  padding-bottom: 162px;
   &__tape {
     margin-bottom: 78px;
   }
