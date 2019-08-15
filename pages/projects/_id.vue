@@ -9,12 +9,19 @@
       </div>
     </div>
     <hr>
+    <comment-list
+      :data="project.commentList"
+    />
   </div>
 </template>
 
 <script>
+import CommentList from '@/components/CommentList'
 
 export default {
+  components: {
+    CommentList
+  },
   computed: {
     project () {
       return this.$store.getters['project/data']
