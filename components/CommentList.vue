@@ -2,7 +2,7 @@
   <div class="comment-list">
     <h2>Комментарии</h2>
     <div
-      v-for="(comment, key) in data"
+      v-for="(comment, key) in commentsList"
       :key="key"
       class="comment-list__item comment-list-item"
     >
@@ -22,7 +22,9 @@
       </div>
     </div>
     <div class="comment-list__more-btn">
-      <button>Показать еще</button>
+      <button v-show="canLoadMoreComments" @click="showMoreCommets">
+        Показать еще
+      </button>
     </div>
   </div>
 </template>
@@ -34,6 +36,25 @@ export default {
     data: {
       type: Array,
       default: () => []
+    }
+  },
+  data: () => ({
+    commentsToShow: 3,
+    commentsToLoad: 3
+  }),
+  computed: {
+    commentsList () {
+      if (!this.data || this.data.length === 0) { return null }
+      return this.data.slice(0, this.commentsToShow)
+    },
+    canLoadMoreComments () {
+      if (!this.data || this.data.length === 0) { return null }
+      return this.data.length >= this.commentsToShow
+    }
+  },
+  methods: {
+    showMoreCommets () {
+      this.commentsToShow = this.commentsToShow + this.commentsToLoad
     }
   }
 }
