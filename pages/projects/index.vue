@@ -1,13 +1,16 @@
 <template>
-  <div class="page page-projects">
-    <h1>Лента проектов</h1>
-    <tape :project-list="paginatedProjectList" class="page-projects__tape" />
-    <pagination
-      v-model="paginationSelectedPage"
-      :pages-amount="paginationPagesAmount"
-      class="page-projects__pagination"
-    />
-  </div>
+  <!-- <no-ssr> is for getting data form cookies via vuex-persistedstate -->
+  <no-ssr>
+    <div class="page page-projects">
+      <h1>Лента проектов</h1>
+      <tape :project-list="paginatedProjectList" class="page-projects__tape" />
+      <pagination
+        v-model="paginationSelectedPage"
+        :pages-amount="paginationPagesAmount"
+        class="page-projects__pagination"
+      />
+    </div>
+  </no-ssr>
 </template>
 
 <script>
@@ -31,7 +34,7 @@ export default {
       },
       set (newValue, oldValue) {
         this.$store.dispatch('project/setSelectedPage', newValue)
-        this.$cookies.set('paginationSelectedPage', String(newValue))
+        this.$cookies.set('selectedPage', String(newValue))
       }
     },
     paginationPagesAmount () {
