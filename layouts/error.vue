@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .error {
+  padding-bottom: 160px;
   &__back {
     display: inline-block;
     margin-top: 20px;
