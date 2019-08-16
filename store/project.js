@@ -1,5 +1,4 @@
 export const state = () => ({
-  id: 0,
   data: {},
   projectList: [],
   commentList: [],
@@ -40,7 +39,6 @@ export const actions = {
    * @returns {Any}
    */
   async setData ({ commit, dispatch }, id) {
-    commit('SET_ID', id)
     const requestArgs = { url: 'project/' + id, payload: null }
     await dispatch('makeRequest', requestArgs)
       .catch((err) => {
@@ -57,9 +55,6 @@ export const actions = {
 }
 
 export const mutations = {
-  SET_ID (state, id) {
-    state.id = id
-  },
   SET_DATA (state, data) {
     state.data = data
   },
@@ -75,7 +70,6 @@ export const mutations = {
 }
 
 export const getters = {
-  id: state => state.id,
   data: state => state.data,
   projectList: state => state.projectList,
   commentList: state => state.commentList,
