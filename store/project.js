@@ -16,6 +16,11 @@ export const actions = {
     })
     return response
   },
+  /**
+   * Set commentList of selected project
+   * @param {Number} projectId
+   * @returns {Any}
+   */
   async setCommentList ({ commit, dispatch }, projectId) {
     const requestArgs = { url: 'commentList?postId=' + projectId, payload: null }
     await dispatch('makeRequest', requestArgs)
@@ -29,6 +34,11 @@ export const actions = {
         commit('SET_COMMENT_LIST', response.data)
       })
   },
+  /**
+   * Set data of selected project
+   * @param {Number} id Project id
+   * @returns {Any}
+   */
   async setData ({ commit, dispatch }, id) {
     commit('SET_ID', id)
     const requestArgs = { url: 'project/' + id, payload: null }
