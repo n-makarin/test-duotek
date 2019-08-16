@@ -17,13 +17,15 @@ export const actions = {
     return response
   },
   async setCommentList ({ commit, dispatch }, projectId) {
-    const requestArgs = { url: 'project/' + projectId + '/commentList', payload: null }
+    const requestArgs = { url: 'commentList?postId=' + projectId, payload: null }
     await dispatch('makeRequest', requestArgs)
       .catch((err) => {
         console.error(err)
       })
       .then((response) => {
-        if (!response) { return null }
+        if (!response) {
+          commit('SET_COMMENT_LIST', null)
+        }
         commit('SET_COMMENT_LIST', response.data)
       })
   },
