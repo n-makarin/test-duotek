@@ -1,25 +1,30 @@
 <template>
   <div class="comment-list">
     <h2>Комментарии</h2>
-    <div
-      v-for="(comment, key) in commentsList"
-      :key="key"
-      class="comment-list__item comment-list-item"
-    >
-      <div class="comment-list-item__wrapper">
-        <div class="comment-list-item__wrapper__img" />
+    <div v-if="commentList">
+      <div
+        v-for="(comment, key) in commentList"
+        :key="key"
+        class="comment-list__item comment-list-item"
+      >
+        <div class="comment-list-item__wrapper">
+          <div class="comment-list-item__wrapper__img" />
+        </div>
+        <div class="comment-list-item__wrapper">
+          <div class="comment-list-item__wrapper__name">
+            {{ comment.author.name }}
+          </div>
+          <div class="comment-list-item__wrapper__email">
+            {{ comment.author.email }}
+          </div>
+          <div class="comment-list-item__wrapper__text">
+            {{ comment.text }}
+          </div>
+        </div>
       </div>
-      <div class="comment-list-item__wrapper">
-        <div class="comment-list-item__wrapper__name">
-          {{ comment.author.name }}
-        </div>
-        <div class="comment-list-item__wrapper__email">
-          {{ comment.author.email }}
-        </div>
-        <div class="comment-list-item__wrapper__text">
-          {{ comment.text }}
-        </div>
-      </div>
+    </div>
+    <div v-else>
+      Нет комментариев
     </div>
     <div class="comment-list__more-btn">
       <button v-show="canLoadMoreComments" @click="showMoreCommets">
@@ -43,7 +48,7 @@ export default {
     commentsToLoad: 3
   }),
   computed: {
-    commentsList () {
+    commentList () {
       if (!this.data || this.data.length === 0) { return null }
       return this.data.slice(0, this.commentsToShow)
     },
