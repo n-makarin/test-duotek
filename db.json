@@ -151,7 +151,8 @@
       "postId": 2123,
       "author": {
         "name": "Константин Константинопольский",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/771796"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     },
@@ -160,7 +161,8 @@
       "postId": 2123,
       "author": {
         "name": "Иван Менестрель",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/d32776"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     },
@@ -169,7 +171,8 @@
       "postId": 2123,
       "author": {
         "name": "Антон Андреев",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/f66b97"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     },
@@ -178,7 +181,8 @@
       "postId": 2123,
       "author": {
         "name": "Антон Савелов",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/56a8c2"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     },
@@ -187,7 +191,8 @@
       "postId": 2143,
       "author": {
         "name": "Иван Менестрель",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/24f355"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     },
@@ -196,7 +201,8 @@
       "postId": 2143,
       "author": {
         "name": "Антон Андреев",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/54176f"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     },
@@ -205,7 +211,8 @@
       "postId": 2153,
       "author": {
         "name": "Константин Константинопольский",
-        "email": "abcd@gmail.com"
+        "email": "abcd@gmail.com",
+        "photoUrl": "https://via.placeholder.com/40/24f355"
       },
       "text": "Излучение облучает фронт, однозначно свидетельствуя о неустойчивости процесса в целом."
     }
