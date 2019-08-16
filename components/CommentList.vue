@@ -8,7 +8,9 @@
         class="comment-list__item comment-list-item"
       >
         <div class="comment-list-item__wrapper">
-          <div class="comment-list-item__wrapper__img" />
+          <div class="comment-list-item__wrapper__img">
+            <img :src="comment.author.photoUrl" alt="avatar">
+          </div>
         </div>
         <div class="comment-list-item__wrapper">
           <div class="comment-list-item__wrapper__name">
@@ -119,6 +121,8 @@ export default {
         width: 40px;
         height: 40px;
         margin-right: 8px;
+        border-radius: 50%;
+        overflow: hidden;
       }
       &__name {
         font-size: 15px;
