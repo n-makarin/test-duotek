@@ -31,6 +31,7 @@ export default {
       },
       set (newValue, oldValue) {
         this.$store.dispatch('project/setSelectedPage', newValue)
+        this.$cookies.set('paginationSelectedPage', String(newValue))
       }
     },
     paginationPagesAmount () {
