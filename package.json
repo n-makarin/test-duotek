@@ -15,7 +15,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "cookie-universal-nuxt": "^2.0.17",
     "moment": "^2.24.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
